@@ -3,13 +3,17 @@ const accounts = [
     {id: 2, owner: "Bob", balance: 300}
 ];
 
-function getAccountById(id) {
-    if (!Number.isFinite(id) || id <= 0) {
-        throw new Error("Invalid value for account ID: The ID must be a positive number.");
-    }
-    return accounts.find(account => account.id === id);
-}
-
+function getAccountById(id) 
+{
+  for (const account of accounts)   
+    {
+        if (account.id === id) 
+        {
+        return account;
+        }
+    }   
+}   
+  
 function createAccount(newAccountId, newAccountOwner) {
     if (accounts.some(account => account.id === newAccountId)) {
         throw new Error("Account with this ID already exists.");
@@ -87,21 +91,4 @@ function transferMoney(fromAccountId, toAccountId, amount) {
 
 // Hints:
 
-getAccountById("1");
-
-createAccount(1, "Alice");
-createAccount("3", "Charlie");
-createAccount(-3, "Charlie");
-createAccount(3, ["Charlie"]);
-createAccount(3, "");
-createAccount(3, "  ");
-
-depositMoney(1, "300")
-depositMoney(1, -300)
-depositMoney(1, 0)
-depositMoney(1, Infinity)
-depositMoney(4, 100)
-transferMoney(1, 2, 100);
-withdrawMoney(1, -100)
-withdrawMoney(1, 0)
-withdrawMoney(1, 501);
+// 1. Use the getAccountById function to retrieve the accounts.
