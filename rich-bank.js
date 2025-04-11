@@ -89,6 +89,4 @@ function transferMoney(fromAccountId, toAccountId, amount) {
 // started writing an ID validation check but left it incomplete. function was missing curly braces.
 // The transfer amount was added twice to the toAccount. This led to a bug where the transfer was failing to execute.
 
-// Hints:
-
-// 1. Use the getAccountById function to retrieve the accounts.
+// The function was missing curly braces.
